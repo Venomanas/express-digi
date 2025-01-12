@@ -45,6 +45,10 @@ let teaData = [];
 let nextId = 1;
 
 app.post("/teas", (req, res) => {
+  logger.info("a post request was made ");
+  logger.error("This is an error message");
+  logger.warn("This is a warning message");
+  logger.debug("This is a debug message");
   const { name, price } = req.body;
   const newTea = { id: nextId++, name, price };
   teaData.push(newTea);
